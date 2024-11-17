@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: trading-platform-api
+    env: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && node server.js
+    envVars:
+      - key: MONGODB_URI
+        value: mongodb+srv://ggrandpasha:7EhA4IpPAAZsb5KR@cluster0.akzi0.mongodb.net/trading-platform?retryWrites=true&w=majority
+      - key: JWT_SECRET
+        value: trading-platform-secret-key-2024
+      - key: CORS_ORIGIN
+        value: https://zippy-fudge-c2e7d7.netlify.app

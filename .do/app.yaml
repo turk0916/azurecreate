@@ -1,0 +1,25 @@
+name: trading-platform
+services:
+- name: backend
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: owner/trading-platform
+  source_dir: /backend
+  environment_slug: node-js
+  instance_size_slug: basic-xxs
+  run_command: npm start
+  envs:
+  - key: MONGODB_URI
+    value: ${MONGODB_URI}
+  - key: JWT_SECRET
+    value: ${JWT_SECRET}
+  - key: PORT
+    value: "8080"
+  - key: NODE_ENV
+    value: "production"
+
+databases:
+- name: mongodb
+  engine: MONGODB
+  version: "5"

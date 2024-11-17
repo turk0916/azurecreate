@@ -1,0 +1,25 @@
+{
+  "name": "Trading Platform",
+  "description": "AI Trading Platform with MongoDB",
+  "repository": "https://github.com/username/trading-platform",
+  "keywords": ["node", "express", "mongodb", "trading"],
+  "addons": [
+    {
+      "plan": "mongolab:sandbox"
+    }
+  ],
+  "env": {
+    "JWT_SECRET": {
+      "description": "A secret key for JWT tokens",
+      "generator": "secret"
+    },
+    "NODE_ENV": {
+      "value": "production"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
